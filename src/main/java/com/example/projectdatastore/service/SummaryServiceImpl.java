@@ -1,5 +1,6 @@
 package com.example.projectdatastore.service;
 
+import com.example.projectdatastore.model.Data;
 import com.example.projectdatastore.model.MeasurementType;
 import com.example.projectdatastore.model.Summary;
 import com.example.projectdatastore.model.SummaryType;
@@ -30,4 +31,8 @@ public class SummaryServiceImpl implements SummaryService {
                 .orElseThrow(SensorNotFoundException::new);
     }
 
+    @Override
+    public void handle(Data data) {
+        summaryRepository.handle(data);
+    }
 }

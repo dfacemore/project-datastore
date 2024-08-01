@@ -1,5 +1,6 @@
 package com.example.projectdatastore.repository;
 
+import com.example.projectdatastore.model.Data;
 import com.example.projectdatastore.model.MeasurementType;
 import com.example.projectdatastore.model.Summary;
 import com.example.projectdatastore.model.SummaryType;
@@ -13,6 +14,10 @@ public interface SummaryRepository {
             long sensorId,
             Set<MeasurementType> measurementTypes,
             Set<SummaryType> summaryTypes
+    );
+
+    void handle(
+            Data data
     );
 
 }
